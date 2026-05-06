@@ -1,5 +1,10 @@
 name: Build
 
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   example:
     runs-on: ubuntu-latest
