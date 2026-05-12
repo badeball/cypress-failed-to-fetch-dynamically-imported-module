@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - update-cypress
 
 jobs:
   example:
@@ -18,9 +18,9 @@ jobs:
         uses: actions/checkout@v6
       - name: Install NPM modules
         run: npm install
+      - name: Info
+        run: npx cypress info
       - name: Run Cypress
-        env:
-          DEBUG: cypress:*
         run: npx cypress run --component
       - name: Versions
         run: |
